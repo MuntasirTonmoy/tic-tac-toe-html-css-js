@@ -46,6 +46,7 @@ header h1 {
   font-weight: 500;
   padding: 1rem;
   cursor: pointer;
+  background-color: #fafafa;
   border: 0.1rem solid black;
   border-radius: 0.2rem;
   transition: box-shadow 200ms ease-in-out;
