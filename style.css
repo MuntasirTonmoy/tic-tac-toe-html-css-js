@@ -23,12 +23,34 @@ body {
 header h1 {
   font-size: clamp(2rem, 4vw + 1rem, 6rem);
   padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   border-bottom: 0.1rem solid #ccc;
 }
 
 .title {
-  font-size: clamp(1rem, 1vw + 1rem, 2rem);
+  font-size: clamp(1rem, 0.8vw + 1rem, 2rem);
   text-align: center;
-  padding: 0 0.5rem;
+  padding: 0 0.5rem 2rem;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.options button {
+  width: 8rem;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem;
+  cursor: pointer;
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.options button:hover {
+  box-shadow: 0.2rem 0.2rem black;
 }
