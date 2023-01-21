@@ -6,9 +6,21 @@
   padding: 0;
 }
 
+body {
+  font-family: "Azeret Mono", monospace;
+}
 .container {
   height: 100vh;
+  background-image: url("https://img.freepik.com/free-photo/white-paper-texture_1194-5416.jpg?w=900&t=st=1674319784~exp=1674320384~hmac=bd1ddc66d34c4cf02542285d65be92106a2e0f5929721b859ef79a523f55b304");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+header h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 6rem);
+  margin-bottom: 1.5rem;
 }
