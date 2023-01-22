@@ -86,3 +86,9 @@ header h1 {
 .b7 {
   border-right: 0.1rem solid black;
 }
+
+.b3,
+.b6,
+.b9 {
+  border-left: 0.1rem solid black;
+}
