@@ -8,12 +8,12 @@
 
 body {
   font-family: "Azeret Mono", monospace;
-}
-.container {
-  height: 100vh;
   background-image: url("https://img.freepik.com/free-photo/white-paper-texture_1194-5416.jpg?w=900&t=st=1674319784~exp=1674320384~hmac=bd1ddc66d34c4cf02542285d65be92106a2e0f5929721b859ef79a523f55b304");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,9 +57,26 @@ header h1 {
   box-shadow: 0.2rem 0.2rem black;
 }
 
+/* .selection {
+  display: none;
+} */
 /* game-board */
 .game-board {
+  width: 28.125rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .box {
+  height: 9.375rem;
+  width: 9.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.b1,
+.b2,
+.b3 {
+  border-bottom: 0.1rem solid black;
 }
