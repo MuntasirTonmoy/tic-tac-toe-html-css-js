@@ -92,3 +92,9 @@ header h1 {
 .b9 {
   border-left: 0.1rem solid black;
 }
+
+.b7,
+.b8,
+.b9 {
+  border-top: 0.1rem solid black;
+}
