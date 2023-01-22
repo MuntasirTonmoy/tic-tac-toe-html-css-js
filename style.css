@@ -56,3 +56,10 @@ header h1 {
 .options button:hover {
   box-shadow: 0.2rem 0.2rem black;
 }
+
+/* game-board */
+.game-board {
+}
+
+.box {
+}
