@@ -80,3 +80,9 @@ header h1 {
 .b3 {
   border-bottom: 0.1rem solid black;
 }
+
+.b1,
+.b4,
+.b7 {
+  border-right: 0.1rem solid black;
+}
