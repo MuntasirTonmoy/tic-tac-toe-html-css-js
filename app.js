@@ -28,6 +28,16 @@ function boxClicked(event) {
       boxFilled[7] === currentPlayer &&
       boxFilled[8] === currentPlayer;
 
+    const leftRow =
+      boxFilled[0] === currentPlayer &&
+      boxFilled[3] === currentPlayer &&
+      boxFilled[6] === currentPlayer;
+
+    const rightRow =
+      boxFilled[2] === currentPlayer &&
+      boxFilled[5] === currentPlayer &&
+      boxFilled[8] === currentPlayer;
+
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   }
 }
