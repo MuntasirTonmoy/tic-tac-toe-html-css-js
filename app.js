@@ -7,10 +7,12 @@ const X_TEXT = "X";
 const currentPlayer = O_TEXT;
 const boxFilled = [null, null, null, null, null, null, null, null, null];
 
-boxes.forEach((box, index) => {
+boxes.forEach(function (box, index) {
   box.addEventListener("click", boxClicked);
+  console.log();
 });
 
 function boxClicked(event) {
-  const boxNo = event.target.
+  const boxNo = event.target.dataset.boxIndex;
+  console.log(boxNo);
 }
