@@ -54,6 +54,9 @@ function boxClicked(event) {
       console.log(currentPlayer, "win");
     }
 
+    const draw = boxFilled.every(elm => elm !== null);
+    console.log(draw);
+
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
     playersTurn.innerText = `${currentPlayer}'s Turn`;
   }
