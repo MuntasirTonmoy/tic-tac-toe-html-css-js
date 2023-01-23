@@ -23,6 +23,11 @@ function boxClicked(event) {
       boxFilled[1] === currentPlayer &&
       boxFilled[2] === currentPlayer;
 
+    const lastRow =
+      boxFilled[6] === currentPlayer &&
+      boxFilled[7] === currentPlayer &&
+      boxFilled[8] === currentPlayer;
+
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   }
 }
