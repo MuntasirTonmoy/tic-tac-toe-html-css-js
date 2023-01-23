@@ -19,5 +19,6 @@ function boxClicked(event) {
   if (boxFilled[boxIndex] === null) {
     boxFilled[boxIndex] = currentPlayer;
     event.target.innerText = currentPlayer;
+    currentPlayer = O_TEXT ? X_TEXT : O_TEXT;
   }
 }
