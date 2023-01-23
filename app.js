@@ -1,12 +1,13 @@
 // selectors
 const boxes = document.querySelectorAll(".box");
+const playersTurn = document.querySelector(".players-turn");
 
 //variables
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = O_TEXT;
 const boxFilled = [null, null, null, null, null, null, null, null, null];
-
+playersTurn.innerText = `${currentPlayer}'s Turn`;
 boxes.forEach(function (box, index) {
   box.addEventListener("click", boxClicked);
 });
@@ -48,6 +49,12 @@ function boxClicked(event) {
       boxFilled[4] === currentPlayer &&
       boxFilled[6] === currentPlayer;
 
+    //* checking if the condition is ture
+    if (firstRow || lastRow || leftRow || rightRow || diagonal1 || diagonal2) {
+      console.log(currentPlayer, "win");
+    }
+
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
+    playersTurn.innerText = `${currentPlayer}'s Turn`;
   }
 }
