@@ -13,6 +13,10 @@ boxes.forEach(function (box, index) {
 });
 
 function boxClicked(event) {
-  const boxNo = event.target.dataset.boxIndex;
-  console.log(boxNo);
+  const boxIndex = event.target.dataset.boxIndex;
+  console.log(boxIndex);
+
+  if (boxFilled[boxIndex] === null) {
+    boxFilled[boxIndex] = currentPlayer;
+  }
 }
