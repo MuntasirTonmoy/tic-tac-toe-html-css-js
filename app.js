@@ -38,6 +38,16 @@ function boxClicked(event) {
       boxFilled[5] === currentPlayer &&
       boxFilled[8] === currentPlayer;
 
+    const diagonal1 =
+      boxFilled[0] === currentPlayer &&
+      boxFilled[4] === currentPlayer &&
+      boxFilled[8] === currentPlayer;
+
+    const diagonal2 =
+      boxFilled[2] === currentPlayer &&
+      boxFilled[4] === currentPlayer &&
+      boxFilled[6] === currentPlayer;
+
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   }
 }
