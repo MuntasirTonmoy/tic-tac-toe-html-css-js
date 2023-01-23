@@ -4,7 +4,7 @@ const boxes = document.querySelectorAll(".box");
 //variables
 const O_TEXT = "O";
 const X_TEXT = "X";
-const currentPlayer = O_TEXT;
+let currentPlayer = O_TEXT;
 const boxFilled = [null, null, null, null, null, null, null, null, null];
 
 boxes.forEach(function (box, index) {
@@ -19,6 +19,6 @@ function boxClicked(event) {
   if (boxFilled[boxIndex] === null) {
     boxFilled[boxIndex] = currentPlayer;
     event.target.innerText = currentPlayer;
-    currentPlayer = O_TEXT ? X_TEXT : O_TEXT;
+    currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   }
 }
