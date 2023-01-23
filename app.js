@@ -1,7 +1,7 @@
 const boxes = document.querySelectorAll(".box");
 
 boxes.forEach((box, index) => {
-  box.addEventListener("click", event => {
-    console.log("box clicked");
-  });
+  box.addEventListener("click", boxClicked);
 });
+
+function boxClicked(event) {}
