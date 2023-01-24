@@ -25,10 +25,20 @@ function boxClicked(event) {
       boxFilled[1] === currentPlayer &&
       boxFilled[2] === currentPlayer;
 
+    const middleRowHorizontal =
+      boxFilled[1] === currentPlayer &&
+      boxFilled[4] === currentPlayer &&
+      boxFilled[7] === currentPlayer;
+
     const lastRow =
       boxFilled[6] === currentPlayer &&
       boxFilled[7] === currentPlayer &&
       boxFilled[8] === currentPlayer;
+
+    const middleRowVertical =
+      boxFilled[3] === currentPlayer &&
+      boxFilled[4] === currentPlayer &&
+      boxFilled[5] === currentPlayer;
 
     const leftRow =
       boxFilled[0] === currentPlayer &&
