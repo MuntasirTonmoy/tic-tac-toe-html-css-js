@@ -1,6 +1,7 @@
 // selectors
 const boxes = document.querySelectorAll(".box");
 const playersTurn = document.querySelector(".players-turn");
+const result = document.querySelector(".result");
 
 //variables
 const O_TEXT = "O";
@@ -51,7 +52,7 @@ function boxClicked(event) {
 
     //* checking if the condition is ture
     if (firstRow || lastRow || leftRow || rightRow || diagonal1 || diagonal2) {
-      console.log(currentPlayer, "win");
+      result.innerText = `${currentPlayer} win`;
     }
 
     const draw = boxFilled.every(elm => elm !== null);
