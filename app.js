@@ -55,8 +55,10 @@ function boxClicked(event) {
       result.innerText = `${currentPlayer} win`;
     }
 
-    const draw = boxFilled.every(elm => elm !== null);
-    console.log(draw);
+    const notDraw = boxFilled.some(elm => elm === null);
+    if (!notDraw) {
+      result.innerText = `Match Draw`;
+    }
 
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
     playersTurn.innerText = `${currentPlayer}'s Turn`;
