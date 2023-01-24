@@ -61,7 +61,16 @@ function boxClicked(event) {
       boxFilled[6] === currentPlayer;
 
     //* checking if the condition is ture
-    if (firstRow || lastRow || leftRow || rightRow || diagonal1 || diagonal2) {
+    if (
+      firstRow ||
+      middleRowHorizontal ||
+      lastRow ||
+      leftRow ||
+      middleRowVertical ||
+      rightRow ||
+      diagonal1 ||
+      diagonal2
+    ) {
       result.innerText = `${currentPlayer} win`;
     }
 
