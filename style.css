@@ -67,8 +67,17 @@ header h1 {
 /* game-board */
 .game-board {
   width: 28.125rem;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
+}
+
+.line {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  animation: line 1s ease-in-out forwards;
 }
 
 .box {
@@ -102,4 +111,13 @@ header h1 {
 .b8,
 .b9 {
   border-top: 0.1rem solid black;
+}
+
+@keyframes line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
