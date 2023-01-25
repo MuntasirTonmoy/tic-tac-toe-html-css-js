@@ -64,25 +64,25 @@ header h1 {
 /* .selection {
   display: none;
 } */
+
 /* game-board */
 .game-board {
-  width: 28.125rem;
+  width: 100%;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.line-horizontal {
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background-color: black;
-  animation: line 1s ease-in-out forwards;
+.diagonal {
+  height: 100%;
+  width: 4px;
+  transform: rotate(-45deg);
+  transform-origin: 6.75rem -2.5625rem;
 }
 
 .box {
-  height: 9.375rem;
-  width: 9.375rem;
+  height: clamp(6rem, 9vw + 1rem, 10rem);
+  width: clamp(6rem, 9vw + 1rem, 10rem);
   font-size: clamp(2rem, 4vw + 1rem, 4rem);
   display: flex;
   justify-content: center;
