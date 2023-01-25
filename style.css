@@ -119,6 +119,9 @@ header h1 {
 }
 
 /* result section */
+.result-section {
+  text-align: center;
+}
 
 @keyframes line {
   0% {
