@@ -72,7 +72,7 @@ header h1 {
   flex-wrap: wrap;
 }
 
-.line {
+.line-horizontal {
   position: absolute;
   height: 4px;
   width: 100%;
