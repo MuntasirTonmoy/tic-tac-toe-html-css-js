@@ -128,6 +128,11 @@ header h1 {
   margin-bottom: 2rem;
 }
 
+.result {
+  font-weight: 700;
+  font-size: clamp(2rem, 2.5rem, 4rem);
+}
+
 @keyframes line {
   0% {
     width: 0%;
