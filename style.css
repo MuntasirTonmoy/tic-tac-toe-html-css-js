@@ -123,6 +123,11 @@ header h1 {
   text-align: center;
 }
 
+.trophy {
+  font-size: 7rem;
+  margin-bottom: 2rem;
+}
+
 @keyframes line {
   0% {
     width: 0%;
