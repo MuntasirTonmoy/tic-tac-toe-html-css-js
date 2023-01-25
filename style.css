@@ -66,6 +66,9 @@ header h1 {
 } */
 
 /* game-board */
+.game {
+  display: none;
+}
 .game-board {
   width: 100%;
   position: relative;
@@ -114,6 +117,8 @@ header h1 {
 .b9 {
   border-top: 0.1rem solid black;
 }
+
+/* result section */
 
 @keyframes line {
   0% {
