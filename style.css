@@ -134,6 +134,9 @@ header h1 {
   margin-bottom: 2rem;
 }
 
+.restart {
+  font-size: 1.5rem;
+}
 @keyframes line {
   0% {
     width: 0%;
