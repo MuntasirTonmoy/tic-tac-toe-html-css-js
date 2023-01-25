@@ -73,11 +73,13 @@ header h1 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.diagonal {
-  height: 100%;
-  width: 4px;
-  transform: rotate(-45deg);
-  transform-origin: 6.75rem -2.5625rem;
+.players-turn {
+  text-align: center;
+  margin: 0 auto 2rem;
+  width: 70%;
+  border-radius: 0.3rem;
+  padding: 0 1rem;
+  border: 0.1rem solid black;
 }
 
 .box {
