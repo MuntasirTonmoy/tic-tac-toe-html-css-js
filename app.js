@@ -119,6 +119,20 @@ function boxClicked(event) {
   }
 }
 
-function gameResult(r) {}
+function gameResult(r) {
+  playersTurn.innerText = "Game over";
+  game.style.pointerEvents = "none";
+  setTimeout(() => {
+    game.classList.add("hide");
+    resultSection.classList.remove("hide");
+    if (r === "win") {
+      trophy.innerText = `🏆`;
+      winnet.innerText = `${currentPlayer}`;
+    } else if (r === "draw") {
+      trophy.innerText = `💪`;
+      result.innerText = `Match Draw`;
+    }
+  }, 500);
+}
 
 function restartGame() {}
