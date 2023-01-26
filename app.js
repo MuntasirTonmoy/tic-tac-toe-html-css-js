@@ -1,44 +1,56 @@
-// selectors
+//* selectors
 const selection = document.querySelector(".selection");
 const game = document.querySelector(".game");
 const resultSection = document.querySelector(".result-section");
 
 const playerXbtn = document.querySelector(".player-x");
 const playerObtn = document.querySelector(".player-o");
+const restartBtn = document.querySelector(".restart");
 
 const boxes = document.querySelectorAll(".box");
 const playersTurn = document.querySelector(".players-turn");
 const result = document.querySelector(".result");
+const trophy = document.querySelector(".trophy");
+const winnet = document.querySelector(".winner");
 
-//variables
+//* variables
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer;
 const boxFilled = [null, null, null, null, null, null, null, null, null];
 
-// Events
-
+//* Events
 playerXbtn.addEventListener("click", selectedPlayer);
 playerObtn.addEventListener("click", selectedPlayer);
+restartBtn.addEventListener("click", restartGame);
 
+// adding events on every box
 boxes.forEach(function (box) {
   box.addEventListener("click", boxClicked);
 });
 
+//* functions
 function selectedPlayer(event) {
   selection.classList.add("hide");
   game.classList.remove("hide");
+
+  // set current player based on user selection
   currentPlayer = event.target.dataset.player === "x" ? X_TEXT : O_TEXT;
   playersTurn.innerText = `${currentPlayer}'s Turn`;
 }
 
 function boxClicked(event) {
+  // getting box index from dataset
   const boxIndex = event.target.dataset.boxIndex;
 
+  // checking if the index element is null
   if (boxFilled[boxIndex] === null) {
+    // setting the current player X or O on array
     boxFilled[boxIndex] = currentPlayer;
+    // showing in the html
     event.target.innerText = currentPlayer;
 
+    // winning condition variable
     const firstRow =
       boxFilled[0] === currentPlayer &&
       boxFilled[1] === currentPlayer &&
@@ -79,7 +91,7 @@ function boxClicked(event) {
       boxFilled[4] === currentPlayer &&
       boxFilled[6] === currentPlayer;
 
-    //* checking if the condition is ture
+    //* checking if the winning condition is ture
     if (
       firstRow ||
       middleRowHorizontal ||
@@ -90,15 +102,23 @@ function boxClicked(event) {
       diagonal1 ||
       diagonal2
     ) {
-      result.innerText = `${currentPlayer} win`;
+      gameResult("win");
+      return;
     }
 
+    // match draw condition
     const notDraw = boxFilled.some(elm => elm === null);
     if (!notDraw) {
-      result.innerText = `Match Draw`;
+      gameResult("draw");
+      return;
     }
 
+    // switching the current player
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
     playersTurn.innerText = `${currentPlayer}'s Turn`;
   }
 }
+
+function gameResult(r) {}
+
+function restartGame() {}
