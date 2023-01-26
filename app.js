@@ -18,6 +18,10 @@ const boxFilled = [null, null, null, null, null, null, null, null, null];
 
 // functions
 
+playerXbtn.addEventListener("click", () => {
+  selection.classList.add("hide");
+});
+
 playersTurn.innerText = `${currentPlayer}'s Turn`;
 boxes.forEach(function (box, index) {
   box.addEventListener("click", boxClicked);
