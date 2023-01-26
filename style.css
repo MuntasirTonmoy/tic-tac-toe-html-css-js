@@ -124,7 +124,7 @@ header h1 {
 
 .trophy {
   font-size: 7rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .result {
@@ -135,6 +135,7 @@ header h1 {
 
 .winner {
   color: darkcyan;
+  font-size: clamp(1.5rem, 4vw + 1rem, 4rem);
 }
 .restart {
   font-size: 1.5rem;

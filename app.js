@@ -11,7 +11,6 @@ const boxes = document.querySelectorAll(".box");
 const playersTurn = document.querySelector(".players-turn");
 const result = document.querySelector(".result");
 const trophy = document.querySelector(".trophy");
-const winnet = document.querySelector(".winner");
 
 //* variables
 const O_TEXT = "O";
@@ -120,6 +119,7 @@ function boxClicked(event) {
 }
 
 function gameResult(r) {
+  console.log(r);
   playersTurn.innerText = "Game over";
   game.style.pointerEvents = "none";
   setTimeout(() => {
@@ -127,8 +127,8 @@ function gameResult(r) {
     resultSection.classList.remove("hide");
     if (r === "win") {
       trophy.innerText = `🏆`;
-      winnet.innerText = `${currentPlayer}`;
-    } else if (r === "draw") {
+      result.innerHTML = `Player <span class="winner">${currentPlayer}</span> win`;
+    } else {
       trophy.innerText = `💪`;
       result.innerText = `Match Draw`;
     }
