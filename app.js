@@ -135,4 +135,16 @@ function gameResult(r) {
   }, 500);
 }
 
-function restartGame() {}
+function restartGame() {
+  resultSection.classList.add("hide");
+  selection.classList.remove("hide");
+  game.style.pointerEvents = "auto";
+
+  boxFilled.forEach((box, index) => {
+    boxFilled[index] = null;
+  });
+
+  boxes.forEach(function (box) {
+    box.innerText = "";
+  });
+}
