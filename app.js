@@ -4,12 +4,11 @@ const game = document.querySelector(".game");
 const resultSection = document.querySelector(".result-section");
 
 const playerXbtn = document.querySelector(".player-x");
-const playerYbtn = document.querySelector(".player-y");
+const playerObtn = document.querySelector(".player-o");
 
 const boxes = document.querySelectorAll(".box");
 const playersTurn = document.querySelector(".players-turn");
 const result = document.querySelector(".result");
-console.log(playerXbtn, playerYbtn, selection, game, resultSection);
 
 //variables
 const O_TEXT = "O";
