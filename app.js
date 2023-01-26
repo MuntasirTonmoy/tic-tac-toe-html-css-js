@@ -25,7 +25,12 @@ boxes.forEach(function (box) {
   box.addEventListener("click", boxClicked);
 });
 
-function selectedPlayer(event) {}
+function selectedPlayer(event) {
+  selection.classList.add("hide");
+  game.classList.remove("hide");
+  currentPlayer = event.target.dataset.player === "x" ? X_TEXT : O_TEXT;
+  playersTurn.innerText = `${currentPlayer}'s Turn`;
+}
 
 function boxClicked(event) {
   const boxIndex = event.target.dataset.boxIndex;

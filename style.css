@@ -136,6 +136,8 @@ header h1 {
 .restart {
   font-size: 1.5rem;
 }
+
+/* animations */
 @keyframes line {
   0% {
     width: 0%;
