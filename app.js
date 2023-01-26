@@ -13,16 +13,11 @@ const result = document.querySelector(".result");
 //variables
 const O_TEXT = "O";
 const X_TEXT = "X";
-let currentPlayer = O_TEXT;
+let currentPlayer;
 const boxFilled = [null, null, null, null, null, null, null, null, null];
 
-// functions
+// Events
 
-playerXbtn.addEventListener("click", () => {
-  selection.classList.add("hide");
-});
-
-playersTurn.innerText = `${currentPlayer}'s Turn`;
 boxes.forEach(function (box, index) {
   box.addEventListener("click", boxClicked);
 });
