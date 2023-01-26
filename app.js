@@ -18,9 +18,14 @@ const boxFilled = [null, null, null, null, null, null, null, null, null];
 
 // Events
 
-boxes.forEach(function (box, index) {
+playerXbtn.addEventListener("click", selectedPlayer);
+playerObtn.addEventListener("click", selectedPlayer);
+
+boxes.forEach(function (box) {
   box.addEventListener("click", boxClicked);
 });
+
+function selectedPlayer(event) {}
 
 function boxClicked(event) {
   const boxIndex = event.target.dataset.boxIndex;
