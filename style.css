@@ -28,10 +28,6 @@ header h1 {
   border-bottom: 0.1rem solid #ccc;
 }
 
-/* .selection {
-  display: none;
-} */
-
 .title {
   font-size: clamp(1rem, 0.8vw + 1rem, 2rem);
   text-align: center;
@@ -50,6 +46,10 @@ header h1 {
   width: 7rem;
 }
 
+.hide {
+  display: none;
+}
+
 .btn {
   font-size: 2rem;
   font-weight: 500;
@@ -66,14 +66,8 @@ header h1 {
   box-shadow: 0.2rem 0.2rem black;
 }
 
-/* .selection {
-  display: none;
-} */
-
 /* game-board */
-.game {
-  display: none;
-}
+
 .game-board {
   width: 100%;
   position: relative;
@@ -126,7 +120,6 @@ header h1 {
 /* result section */
 .result-section {
   text-align: center;
-  display: none;
 }
 
 .trophy {
