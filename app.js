@@ -119,7 +119,6 @@ function boxClicked(event) {
 }
 
 function gameResult(r) {
-  console.log(r);
   playersTurn.innerText = "Game over";
   game.style.pointerEvents = "none";
   setTimeout(() => {
