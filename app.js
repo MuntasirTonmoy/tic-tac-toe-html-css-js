@@ -120,6 +120,7 @@ function boxClicked(event) {
 
 function gameResult(r) {
   playersTurn.innerText = "Game over";
+  // can't touch for half second
   game.style.pointerEvents = "none";
   setTimeout(() => {
     game.classList.add("hide");
