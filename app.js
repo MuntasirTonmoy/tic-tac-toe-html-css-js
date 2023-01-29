@@ -115,11 +115,15 @@ function boxClicked(event) {
     // switching the current player
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
     playersTurn.innerText = `${currentPlayer}'s Turn`;
-    bot();
+    const availabeBox = boxFilled.filter(elm => elm === null);
+    bot(availabeBox);
   }
 }
 
-function bot() {}
+function bot(availabeBox) {
+  console.log(availabeBox);
+}
+
 function gameResult(r) {
   playersTurn.innerText = "Game over";
   // can't touch for half second
