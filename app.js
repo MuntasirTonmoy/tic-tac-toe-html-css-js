@@ -125,6 +125,7 @@ function bot(availabeBox, currentPlayer) {
   const botMove = Math.floor(Math.random() * availabeBox.length);
   availabeBox[botMove] = currentPlayer;
   boxes[botMove].innerText = currentPlayer;
+  currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
 }
 
 function gameResult(r) {
