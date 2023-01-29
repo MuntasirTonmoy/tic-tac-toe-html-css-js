@@ -115,8 +115,11 @@ function boxClicked(event) {
     // switching the current player
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
     playersTurn.innerText = `${currentPlayer}'s Turn`;
-    const availabeBox = boxFilled.filter(elm => elm === null);
-    bot(availabeBox, currentPlayer);
+    const availabeBox = boxFilled.map((elm, index) => {
+      if (elm === null) return index;
+    });
+
+    //bot(availabeBox, currentPlayer);
   }
 }
 
