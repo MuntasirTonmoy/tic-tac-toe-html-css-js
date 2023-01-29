@@ -121,7 +121,8 @@ function boxClicked(event) {
 }
 
 function bot(availabeBox) {
-  console.log(availabeBox);
+  game.style.pointerEvents = "none";
+  const botMove = Math.floor(Math.random() * availabeBox.length);
 }
 
 function gameResult(r) {
