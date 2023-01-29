@@ -127,6 +127,7 @@ function bot(availabeBox, currentPlayer) {
   boxes[botMove].innerText = currentPlayer;
   currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   playersTurn.innerText = `${currentPlayer}'s Turn`;
+  game.style.pointerEvents = "auto";
 }
 
 function gameResult(r) {
