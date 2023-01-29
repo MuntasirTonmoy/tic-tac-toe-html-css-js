@@ -121,7 +121,7 @@ function boxClicked(event) {
       })
       .filter(elm => elm !== undefined);
 
-    //bot(availabeBox, currentPlayer);
+    bot(availabeBox, currentPlayer);
   }
 }
 
