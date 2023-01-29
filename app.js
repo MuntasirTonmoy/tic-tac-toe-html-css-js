@@ -116,13 +116,15 @@ function boxClicked(event) {
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
     playersTurn.innerText = `${currentPlayer}'s Turn`;
     const availabeBox = boxFilled.filter(elm => elm === null);
-    bot(availabeBox);
+    bot(availabeBox, currentPlayer);
   }
 }
 
-function bot(availabeBox) {
+function bot(availabeBox, currentPlayer) {
   game.style.pointerEvents = "none";
   const botMove = Math.floor(Math.random() * availabeBox.length);
+  availabeBox[botMove] = currentPlayer;
+  boxes[botMove].innerText = currentPlayer;
 }
 
 function gameResult(r) {
