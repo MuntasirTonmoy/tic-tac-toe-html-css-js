@@ -58,6 +58,9 @@ function boxClicked(event) {
 }
 
 function bot() {
+  // mouse click off
+  game.style.pointerEvents = "none";
+
   // extracting the available box index array
   const availabeBox = boxFilled
     .map((elm, index) => {
@@ -71,7 +74,10 @@ function bot() {
     boxFilled[botMove] = currentPlayer;
     boxes[botMove].innerText = currentPlayer;
     // checking win or draw
+
     checkWinOrDraw();
+    // mouse click on
+    game.style.pointerEvents = "auto";
   }, 600);
 }
 
