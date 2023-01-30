@@ -66,12 +66,13 @@ function bot() {
     .filter(elm => elm !== undefined);
 
   //bot move on the html
-  const botMove = availabeBox[Math.floor(Math.random() * availabeBox.length)];
-  boxFilled[botMove] = currentPlayer;
-  boxes[botMove].innerText = currentPlayer;
-
-  // checking win or draw
-  checkWinOrDraw();
+  setTimeout(() => {
+    const botMove = availabeBox[Math.floor(Math.random() * availabeBox.length)];
+    boxFilled[botMove] = currentPlayer;
+    boxes[botMove].innerText = currentPlayer;
+    // checking win or draw
+    checkWinOrDraw();
+  }, 600);
 }
 
 function checkWinOrDraw() {
