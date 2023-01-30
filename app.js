@@ -57,7 +57,14 @@ function boxClicked(event) {
   }
 }
 
-function bot() {}
+function bot() {
+  // extracting the available box index array
+  const availabeBox = boxFilled
+    .map((elm, index) => {
+      if (elm === null) return index;
+    })
+    .filter(elm => elm !== undefined);
+}
 
 function checkWinOrDraw() {
   const firstRow =
