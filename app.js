@@ -49,28 +49,15 @@ function boxClicked(event) {
     // showing in the html
     event.target.innerText = currentPlayer;
     // win or draw condition checking
-    checkWinOrDraw();
+    const winOrDraw = checkWinOrDraw();
+
+    if (!winOrDraw) {
+      bot();
+    }
   }
-  /* const availabeBox = boxFilled
-    .map((elm, index) => {
-      if (elm === null) return index;
-    })
-    .filter(elm => elm !== undefined);
-  bot(availabeBox, currentPlayer); */
 }
 
-/* function bot(availabeBox, currentPlayer) {
-  const botMove = availabeBox[Math.floor(Math.random() * availabeBox.length)];
-  console.log(botMove);
-  boxFilled[botMove] = currentPlayer;
-  console.log(boxFilled);
-  boxes[botMove].innerText = currentPlayer;
-  currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
-  console.log(currentPlayer);
-  //playersTurn.innerText = `${currentPlayer}'s Turn`;
-
-  // game.style.pointerEvents = "auto";
-} */
+function bot() {}
 
 function checkWinOrDraw() {
   const firstRow =
@@ -125,14 +112,14 @@ function checkWinOrDraw() {
     diagonal2
   ) {
     gameResult("win");
-    return;
+    return true;
   }
 
   // match draw condition
   const notDraw = boxFilled.some(elm => elm === null);
   if (!notDraw) {
     gameResult("draw");
-    return;
+    return true;
   }
   // switching the current player
   currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
