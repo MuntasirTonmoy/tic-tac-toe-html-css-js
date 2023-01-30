@@ -48,91 +48,95 @@ function boxClicked(event) {
     boxFilled[boxIndex] = currentPlayer;
     // showing in the html
     event.target.innerText = currentPlayer;
-
-    // winning condition variable
-    const firstRow =
-      boxFilled[0] === currentPlayer &&
-      boxFilled[1] === currentPlayer &&
-      boxFilled[2] === currentPlayer;
-
-    const middleRowHorizontal =
-      boxFilled[1] === currentPlayer &&
-      boxFilled[4] === currentPlayer &&
-      boxFilled[7] === currentPlayer;
-
-    const lastRow =
-      boxFilled[6] === currentPlayer &&
-      boxFilled[7] === currentPlayer &&
-      boxFilled[8] === currentPlayer;
-
-    const middleRowVertical =
-      boxFilled[3] === currentPlayer &&
-      boxFilled[4] === currentPlayer &&
-      boxFilled[5] === currentPlayer;
-
-    const leftRow =
-      boxFilled[0] === currentPlayer &&
-      boxFilled[3] === currentPlayer &&
-      boxFilled[6] === currentPlayer;
-
-    const rightRow =
-      boxFilled[2] === currentPlayer &&
-      boxFilled[5] === currentPlayer &&
-      boxFilled[8] === currentPlayer;
-
-    const diagonal1 =
-      boxFilled[0] === currentPlayer &&
-      boxFilled[4] === currentPlayer &&
-      boxFilled[8] === currentPlayer;
-
-    const diagonal2 =
-      boxFilled[2] === currentPlayer &&
-      boxFilled[4] === currentPlayer &&
-      boxFilled[6] === currentPlayer;
-
-    //* checking if the winning condition is ture
-    if (
-      firstRow ||
-      middleRowHorizontal ||
-      lastRow ||
-      leftRow ||
-      middleRowVertical ||
-      rightRow ||
-      diagonal1 ||
-      diagonal2
-    ) {
-      gameResult("win");
-      return;
-    }
-
-    // match draw condition
-    const notDraw = boxFilled.some(elm => elm === null);
-    if (!notDraw) {
-      gameResult("draw");
-      return;
-    }
-
-    // switching the current player
-    currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
-    playersTurn.innerText = `${currentPlayer}'s Turn`;
-    const availabeBox = boxFilled
-      .map((elm, index) => {
-        if (elm === null) return index;
-      })
-      .filter(elm => elm !== undefined);
-
-    bot(availabeBox, currentPlayer);
+    // win or draw condition checking
+    checkWinOrDraw();
   }
+  /* const availabeBox = boxFilled
+    .map((elm, index) => {
+      if (elm === null) return index;
+    })
+    .filter(elm => elm !== undefined);
+  bot(availabeBox, currentPlayer); */
 }
 
-function bot(availabeBox, currentPlayer) {
-  game.style.pointerEvents = "none";
-  const botMove = Math.floor(Math.random() * availabeBox.length);
-  availabeBox[botMove] = currentPlayer;
+/* function bot(availabeBox, currentPlayer) {
+  const botMove = availabeBox[Math.floor(Math.random() * availabeBox.length)];
+  console.log(botMove);
+  boxFilled[botMove] = currentPlayer;
+  console.log(boxFilled);
   boxes[botMove].innerText = currentPlayer;
   currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
+  console.log(currentPlayer);
+  //playersTurn.innerText = `${currentPlayer}'s Turn`;
+
+  // game.style.pointerEvents = "auto";
+} */
+
+function checkWinOrDraw() {
+  const firstRow =
+    boxFilled[0] === currentPlayer &&
+    boxFilled[1] === currentPlayer &&
+    boxFilled[2] === currentPlayer;
+
+  const middleRowHorizontal =
+    boxFilled[1] === currentPlayer &&
+    boxFilled[4] === currentPlayer &&
+    boxFilled[7] === currentPlayer;
+
+  const lastRow =
+    boxFilled[6] === currentPlayer &&
+    boxFilled[7] === currentPlayer &&
+    boxFilled[8] === currentPlayer;
+
+  const middleRowVertical =
+    boxFilled[3] === currentPlayer &&
+    boxFilled[4] === currentPlayer &&
+    boxFilled[5] === currentPlayer;
+
+  const leftRow =
+    boxFilled[0] === currentPlayer &&
+    boxFilled[3] === currentPlayer &&
+    boxFilled[6] === currentPlayer;
+
+  const rightRow =
+    boxFilled[2] === currentPlayer &&
+    boxFilled[5] === currentPlayer &&
+    boxFilled[8] === currentPlayer;
+
+  const diagonal1 =
+    boxFilled[0] === currentPlayer &&
+    boxFilled[4] === currentPlayer &&
+    boxFilled[8] === currentPlayer;
+
+  const diagonal2 =
+    boxFilled[2] === currentPlayer &&
+    boxFilled[4] === currentPlayer &&
+    boxFilled[6] === currentPlayer;
+
+  //* checking if the winning condition is ture
+  if (
+    firstRow ||
+    middleRowHorizontal ||
+    lastRow ||
+    leftRow ||
+    middleRowVertical ||
+    rightRow ||
+    diagonal1 ||
+    diagonal2
+  ) {
+    gameResult("win");
+    return;
+  }
+
+  // match draw condition
+  const notDraw = boxFilled.some(elm => elm === null);
+  if (!notDraw) {
+    gameResult("draw");
+    return;
+  }
+  // switching the current player
+  currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   playersTurn.innerText = `${currentPlayer}'s Turn`;
-  game.style.pointerEvents = "auto";
 }
 
 function gameResult(r) {
